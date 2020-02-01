@@ -11,5 +11,6 @@ onready var animation_player = $AnimationPlayer
 # The animation takes cares of making the coin disappear, but also deactivates its collisions
 # and frees it from memory, saving us from writing more complex code.
 # Click the AnimationPlayer node to see the animation timeline.
+# warning-ignore:unused_argument
 func _on_body_entered(body):
 	animation_player.play("picked")

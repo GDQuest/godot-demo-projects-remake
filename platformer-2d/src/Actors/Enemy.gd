@@ -32,6 +32,7 @@ func _ready():
 	  # jump to the corresponding function.
 	# - If you split the character into a state machine or more advanced pattern, you can easily move 
 	  # individual functions.
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	_velocity = calculate_move_velocity(_velocity)
 	
