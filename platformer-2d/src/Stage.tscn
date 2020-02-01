@@ -49,13 +49,6 @@ tracks/0/keys = {
 pause_mode = 2
 script = ExtResource( 6 )
 
-[node name="PlatformStatic" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1139.87, 211.754 )
-
-[node name="PlatformStatic2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 966.273, 169.681 )
-rotation = 0.109325
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 collision_layer = 16
@@ -231,6 +224,15 @@ position = Vector2( -93.4945, 159.269 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 autoplay = "move"
 anims/move = SubResource( 2 )
+
+[node name="PlatformStatic" parent="Platforms" instance=ExtResource( 9 )]
+position = Vector2( 1139.87, 211.754 )
+z_index = -1
+
+[node name="PlatformStatic2" parent="Platforms" instance=ExtResource( 9 )]
+position = Vector2( 966.273, 169.681 )
+rotation = 0.109325
+z_index = -1
 
 [node name="Enemies" type="Node" parent="."]
 
