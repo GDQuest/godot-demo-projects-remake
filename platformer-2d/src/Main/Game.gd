@@ -21,4 +21,6 @@ func _input(event: InputEvent) -> void:
 		tree.paused = not tree.paused
 		if tree.paused:
 			_pause_menu.open()
+		else:
+			_pause_menu.close()
 		get_tree().set_input_as_handled()

@@ -13,6 +13,10 @@ func open():
 	resume_button.grab_focus()
 
 
+func close():
+	visible = false
+
+
 func _on_ResumeButton_pressed() -> void:
 	get_tree().paused = false
 	visible = false
