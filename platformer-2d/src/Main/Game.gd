@@ -3,6 +3,11 @@
 extends Node
 
 
+# The "_" prefix is a convention to indicate that variables are private,
+# that is to say, another node or script should not access them.
+onready var _pause_menu = $InterfaceLayer/PauseMenu
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_fullscreen"):
 		OS.window_fullscreen = not OS.window_fullscreen
@@ -14,4 +19,6 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("toggle_pause"):
 		var tree = get_tree()
 		tree.paused = not tree.paused
+		if tree.paused:
+			_pause_menu.open()
 		get_tree().set_input_as_handled()

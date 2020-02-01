@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Platforms/Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Main/GlobalControls.gd" type="Script" id=6]
-[ext_resource path="res://src/ParallaxBackground.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Level/ParallaxBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/audio/music/music.ogg" type="AudioStream" id=8]
 [ext_resource path="res://src/Platforms/PlatformStatic.tscn" type="PackedScene" id=9]
 
@@ -43,11 +42,8 @@ tracks/0/keys = {
 "values": [ Vector2( -93.4945, 159.269 ), Vector2( -93.4945, 814.766 ) ]
 }
 
-[node name="Stage" type="Node"]
-
-[node name="GlobalControls" type="Node" parent="."]
-pause_mode = 2
-script = ExtResource( 6 )
+[node name="Level" type="Node2D"]
+pause_mode = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
