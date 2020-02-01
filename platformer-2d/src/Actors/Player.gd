@@ -2,6 +2,8 @@ extends Actor
 class_name Player
 
 
+const FLOOR_DETECT_DISTANCE = 40.0
+
 onready var platform_detector = $PlatformDetector
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
@@ -33,10 +35,10 @@ func _physics_process(delta):
 	var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 
-	var is_snapping = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
+	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
 	var is_on_platform = platform_detector.is_colliding()
 	_velocity = move_and_slide_with_snap(
-		_velocity, is_snapping, FLOOR_NORMAL, not is_on_platform, 4,  0.9, false
+		_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4,  0.9, false
 	)
 
 	# When the character’s direction changes, we want to to scale the Sprite accordingly to flip it.
