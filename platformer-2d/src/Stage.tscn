@@ -251,8 +251,18 @@ position = Vector2( 1657.03, 154.524 )
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 295.269, 1054.17 )
 
+[node name="Camera" parent="Player" index="4"]
+limit_left = -626
+limit_top = -780
+limit_right = 1905
+limit_bottom = 1384
+limit_smoothed = true
+editor_draw_limits = true
+
 [node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
+
+[editable path="Player"]
