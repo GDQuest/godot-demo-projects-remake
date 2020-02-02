@@ -212,13 +212,15 @@ position = Vector2( 1414.49, 799.663 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
 autoplay = "move"
+playback_process_mode = 0
 anims/move = SubResource( 1 )
 
 [node name="Platform2" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( -93.4945, 159.269 )
+position = Vector2( -93.4945, 752.187 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 autoplay = "move"
+playback_process_mode = 0
 anims/move = SubResource( 2 )
 
 [node name="PlatformStatic" parent="Platforms" instance=ExtResource( 9 )]
@@ -245,7 +247,7 @@ position = Vector2( 1265.45, 157.109 )
 position = Vector2( 1657.03, 154.524 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 295.269, 1054.17 )
+position = Vector2( -86.888, 630.133 )
 
 [node name="Camera" parent="Player" index="4"]
 limit_left = -626

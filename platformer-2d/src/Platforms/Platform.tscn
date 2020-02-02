@@ -8,6 +8,7 @@ extents = Vector2( 94, 12 )
 [node name="Platform" type="KinematicBody2D"]
 collision_layer = 8
 collision_mask = 0
+collision/safe_margin = 0.12
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="."]
