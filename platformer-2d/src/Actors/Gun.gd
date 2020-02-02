@@ -17,7 +17,7 @@ func shoot(direction = 1):
 	var bullet = Bullet.instance()
 	bullet.global_position = global_position
 	bullet.linear_velocity = Vector2(direction * BULLET_VELOCITY, 0)
-	
+
 	bullet.set_as_toplevel(true)
 	add_child(bullet)
 	sound_shoot.play()
