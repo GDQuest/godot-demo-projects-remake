@@ -5,9 +5,9 @@
 [ext_resource path="res://src/Platforms/Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/art/platforms/moving_platform.png" type="Texture" id=6]
 [ext_resource path="res://src/Level/ParallaxBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/audio/music/music.ogg" type="AudioStream" id=8]
-[ext_resource path="res://src/Platforms/PlatformStatic.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "move"
@@ -216,21 +216,30 @@ playback_process_mode = 0
 anims/move = SubResource( 1 )
 
 [node name="Platform2" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( -93.4945, 752.187 )
+position = Vector2( -93.4945, 700.054 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 autoplay = "move"
 playback_process_mode = 0
 anims/move = SubResource( 2 )
 
-[node name="PlatformStatic" parent="Platforms" instance=ExtResource( 9 )]
+[node name="PlatformStatic" type="StaticBody2D" parent="Platforms"]
 position = Vector2( 1139.87, 211.754 )
+rotation = 0.355618
 z_index = -1
+collision_layer = 16
+collision_mask = 0
 
-[node name="PlatformStatic2" parent="Platforms" instance=ExtResource( 9 )]
-position = Vector2( 966.273, 169.681 )
-rotation = 0.109325
-z_index = -1
+[node name="Sprite2" type="Sprite" parent="Platforms/PlatformStatic"]
+position = Vector2( -177.384, 21.0007 )
+rotation = -0.246293
+texture = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Platforms/PlatformStatic"]
+texture = ExtResource( 6 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/PlatformStatic"]
+polygon = PoolVector2Array( -261.093, 20.4292, -94.1774, -21.2967, 16.1709, -14.2775, 20.3489, -3.02834, -93.7491, -8.65489, -257.264, 30.7409 )
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -247,7 +256,7 @@ position = Vector2( 1265.45, 157.109 )
 position = Vector2( 1657.03, 154.524 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( -86.888, 630.133 )
+position = Vector2( 843.896, 108.894 )
 
 [node name="Camera" parent="Player" index="4"]
 limit_left = -626

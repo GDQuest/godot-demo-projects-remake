@@ -183,8 +183,8 @@ tracks/0/keys = {
 "values": [ 10, 11, 12, 13, 14, 5 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=11]
-height = 44.4787
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 10, 27 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 30
@@ -198,16 +198,16 @@ wait_time = 0.2
 one_shot = true
 
 [node name="PlatformDetector" type="RayCast2D" parent="."]
-position = Vector2( 0, 29.9245 )
 enabled = true
 cast_to = Vector2( 0, 6 )
 collision_mask = 8
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -28 )
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 16
-frame = 22
+frame = 16
 
 [node name="Gun" type="Position2D" parent="Sprite"]
 position = Vector2( 30.6589, 6.13176 )
@@ -236,11 +236,12 @@ anims/run_weapon = SubResource( 9 )
 anims/standing_weapon_ready = SubResource( 10 )
 
 [node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 0, -28 )
 current = true
 process_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.291992, -0.835023 )
+position = Vector2( 0, -27 )
 shape = SubResource( 11 )
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
